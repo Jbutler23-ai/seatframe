@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "id": "demo-arena",
+  "name": "Fictional demonstration arena",
+  "section": 101,
+  "rows": 8,
+  "seats_per_row": 16,
+  "seat_pitch": 0.52,
+  "row_depth": 0.85,
+  "row_rise": 0.4,
+  "front_distance": 18,
+  "first_row_height": 1.2,
+  "playing_length": 28,
+  "playing_width": 15
+}
