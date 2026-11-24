@@ -1,14 +1,16 @@
 # Seatframe system plan
 
-The intended product lets someone choose a US NFL, MLB, NHL, or NBA venue, select a section, row, and seat, and preview its sports or concert layout. The view can move from an overview to the seat, compare nearby seats, show modeled obstructions, and locate concessions along permitted walking routes.
+The first real venue is Gainbridge Fieldhouse. Start with its basketball layout, then a separately documented concert configuration. The larger product will cover US NFL, MLB, NHL, and NBA venues through the same venue-pack format. A user selects a section, row, and seat, moves from an overview into that view, compares seats, checks modeled obstructions, and locates concessions along permitted walking routes.
 
-The current repository contains only a fictional seating section and static game/concert perspective previews. Everything below is planned. A convincing stadium image alone does not establish an accurate seat view.
+The repository currently contains a Gainbridge source record plus a fictional geometry test fixture and static game/concert previews. There is no Gainbridge mesh or verified seat-coordinate set yet. Everything below is planned. A convincing stadium image alone does not establish an accurate seat view.
 
 ## Data and coverage
 
-Build the engine with original synthetic venue packs: a football bowl, an asymmetric baseball park, and a shared basketball/hockey arena. Each needs an end-stage and an in-the-round concert configuration. Keep those fixtures usable offline, with no ticket-provider account or live feed.
+Begin with the [Gainbridge modeling brief](gainbridge.md). Reconcile the available section maps, seating references, concession locations, and event layouts. Build original geometry from sources that can be used for that purpose. Record which dimensions are measured, inferred, or still unknown, and establish calibration points before evaluating seat views.
 
-The eventual real-venue catalog is separate work. It requires usable source data, permission to distribute it, a seat manifest, event-specific layouts, and checks against the building. A public map or existing online viewer is a reference, not an already acquired geometry dataset. Do not silently fill gaps with invented dimensions and label the result verified.
+Real-venue modeling requires usable source data, permission to distribute any supplied assets, a seat manifest, event-specific layouts, and checks against the building. A public map or existing online viewer is a reference, not an already acquired geometry dataset. Do not silently fill gaps with invented dimensions and label the result verified. An early Gainbridge reconstruction may remain approximate while those gaps are resolved.
+
+Keep separate synthetic fixtures for numerical tests, malformed inputs, unusual bowl shapes, and configurable obstructions. After the Gainbridge workflow is established, extend the format to football bowls, asymmetric baseball parks, and basketball/hockey conversions. National coverage is a venue-by-venue modeling and validation effort, not a list of renamed copies of the same bowl.
 
 Record each pack's source, units, revision, supported configurations, validation evidence, and coverage. Distinguish synthetic geometry, approximate reconstructions, and validated measurements. A venue shared by several teams should retain one building identity, with dated configurations and aliases. Unsupported seats or event layouts must remain unavailable rather than pointing to a nearby substitute.
 
@@ -18,7 +20,7 @@ Develop a versioned format for parametric seating tiers, curved rows, aisles, po
 
 Map seats to floor coordinates, orientation, and a configurable eye offset. Check units, axes, transforms, bounds, duplicate identifiers, impossible row spacing, and intersections. Import/export must preserve the same seat positions and route connections. Define migrations and reject unsupported versions before replacing a usable pack.
 
-First milestone: expand the current single section into a generated bowl with several tiers and aisles, and prove that identifiers resolve to the intended geometry. An independent reader should recover the same seat positions from an exported pack.
+First milestone: map the Gainbridge source coverage and build a first tier reconstruction with explicit measurement assumptions. Verify a supported set of section/row/seat identifiers against the references before exposing their views. An independent reader should recover the same seat positions from an exported pack. Keep unknown seats unsupported.
 
 ## Event layouts
 
@@ -62,7 +64,7 @@ These checks establish behavior on known geometry. Real venues require a separat
 
 ## Work sequence
 
-Begin with the venue format, tier generator, and independent geometry fixtures. Then add event overlays, camera transitions, obstruction queries, and software rendering. Build the walking graph and local editor against those shared revisions. Follow with worker coordination, caching, pack migration, failure testing, and scale qualification.
+Begin with Gainbridge's source record, the venue format, a tier reconstruction, and independent geometry fixtures. Then add a documented concert layout, camera transitions, obstruction queries, and software rendering. Build the walking graph and local editor against those shared revisions. Follow with worker coordination, caching, pack migration, failure testing, scale qualification, and additional venues.
 
 Each area will need several implementation and validation passes. Completing an early milestone leaves the larger system and venue coverage ahead.
 

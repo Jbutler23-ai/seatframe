@@ -1,12 +1,12 @@
 # Seatframe
 
-Seatframe is the beginning of an offline 3D seat-preview system in Python. Pick a section, row, and seat, then compare the view toward a playing area or concert stage.
+Seatframe is the beginning of an offline 3D seat-preview system in Python. The first venue is Gainbridge Fieldhouse in Indianapolis. The goal is to select a section, row, and seat, compare basketball and concert views, and find nearby concessions along usable walking routes.
 
-The larger goal is to support US NFL, MLB, NHL, and NBA venues, with event layouts and walking routes to concessions. That coverage will need venue data and validation. No real stadium models or ticket inventory are included here.
+The larger goal is to support every US NFL, MLB, NHL, and NBA stadium or arena through versioned venue packs. Gainbridge's [source record](data/venues/gainbridge-fieldhouse.json) and [modeling brief](docs/gainbridge.md) identify the first references and missing measurements. A finished Gainbridge model and ticket inventory are not included yet.
 
 ## Starting point
 
-The starter has one fictional arena fixture, a small seating section, a perspective camera, and static SVG previews for game and concert layouts. The game view contains a court; the concert view adds a stage. Both use the same seat coordinates. Simple stand outlines provide context.
+The code currently has a small seating section, a perspective camera, and static SVG previews for game and concert layouts. Its fictional geometry is a test fixture, not a model of Gainbridge. The game fixture contains a court; the concert fixture adds a stage. Both use the same seat coordinates. Simple stand outlines provide context.
 
 These are schematic views of 3D geometry. There is no animation, surface occlusion, full seating bowl, realistic lighting, concession routing, or interactive editor yet. The outlines can show through one another. This is not an actual view from a real ticketed seat.
 
@@ -26,6 +26,6 @@ The fixture uses meters: x runs across the section, y runs toward the playing ar
 
 ## Work ahead
 
-The [system plan](docs/plan.md) covers venue generation, seat identity, event configurations, visibility, software rendering, camera animation, route finding, editing, and validation. It separates the offline engine from the later work of obtaining and checking real venue data.
+The [system plan](docs/plan.md) starts with Gainbridge source mapping and a measured reconstruction, then covers seat identity, event configurations, visibility, software rendering, animation, routing, editing, and validation. Estimated dimensions and unsupported seats must remain distinguishable from checked geometry.
 
-All fixtures are fictional and created for this project. The starter runs without internet access, a GPU, Docker, sound, accounts, or external services. Code and fixtures are under the [MIT license](LICENSE).
+Geometry test fixtures are fictional and created for this project. The Gainbridge record contains a few sourced public facts and links, not copied maps or a venue mesh. The starter runs without internet access, a GPU, Docker, sound, accounts, or external services. Code and original fixtures are under the [MIT license](LICENSE).

@@ -1,0 +1,55 @@
+{
+  "record_version": 1,
+  "venue_id": "gainbridge-fieldhouse-us-in",
+  "name": "Gainbridge Fieldhouse",
+  "city": "Indianapolis",
+  "state": "IN",
+  "country": "US",
+  "source_review_date": "2026-11-24",
+  "model_status": "not_built",
+  "model_path": null,
+  "validated_seats": [],
+  "planned_layouts": ["basketball", "documented-concert-configuration"],
+  "sources": [
+    {
+      "id": "official-dining",
+      "url": "https://www.gainbridgefieldhouse.com/dining",
+      "purpose": "Venue identity, location, and link to the official concession guide"
+    },
+    {
+      "id": "official-concession-guide",
+      "url": "https://www.gainbridgefieldhouse.com/assets/doc/Dining-at-Gainbridge-Fieldhouse-9515cde05e.pdf",
+      "purpose": "Published concession names and section labels; no measured XYZ coordinates"
+    },
+    {
+      "id": "pacers-virtual-venue",
+      "url": "https://pacers.io-media.com/",
+      "purpose": "Seating reference viewer; no model or asset reuse rights assumed"
+    },
+    {
+      "id": "official-verandas",
+      "url": "https://www.gainbridgefieldhouse.com/verandas",
+      "purpose": "Event-layout and end-stage obstruction context, not stage dimensions"
+    }
+  ],
+  "concession_references": [
+    {
+      "name": "Ben's Pretzels",
+      "level_label": "Main Concourse",
+      "section_label": "2",
+      "source_id": "official-concession-guide",
+      "coordinates": null,
+      "route_node": null,
+      "opening_status": "unknown"
+    },
+    {
+      "name": "Three Point Taqueria",
+      "level_label": "Main Concourse",
+      "section_label": "6",
+      "source_id": "official-concession-guide",
+      "coordinates": null,
+      "route_node": null,
+      "opening_status": "unknown"
+    }
+  ]
+}
